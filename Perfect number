@@ -1,0 +1,14 @@
+class Solution:
+    def checkPerfectNumber(self, num: int) -> bool:
+        if num<=1:
+            return False
+        add=1
+        for i in range(2,int(num**0.5)+1):
+            if num%i == 0:
+                add=add+i
+                if i*i!=num:
+                    add=add+num//i
+        if add==num:
+            return True
+        else:
+            return False
