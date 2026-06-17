@@ -1,0 +1,10 @@
+class Solution:
+    def convertToTitle(self, columnNumber: int) -> str:
+        cn=columnNumber
+        result=[]
+        while cn>0:
+            cn-=1
+            rem=cn%26
+            result.append(chr(ord('A')+rem))
+            cn//=26
+        return ''.join(reversed(result))
