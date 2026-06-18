@@ -1,0 +1,8 @@
+class Solution:
+    def singleNumber(self, nums: List[int]) -> int:
+        result1=0
+        result2=0
+        for num in nums:
+            result1=(result1^num)&~result2
+            result2=(result2^num)&~result1
+        return result1
